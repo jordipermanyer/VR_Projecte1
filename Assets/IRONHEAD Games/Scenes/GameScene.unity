@@ -1423,14 +1423,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawnpoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 628099177}
+  - {fileID: 1147366001}
+  - {fileID: 2003897386}
+  - {fileID: 293038737}
+  - {fileID: 1779644972}
   Cubeprefabs:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 9220460230358506278, guid: f1044f83bc9ee9145b22f20847ceb742, type: 3}
+  - {fileID: 784917196415359683, guid: b33d44cc0102bbb4db363d552a024fa0, type: 3}
   timeRate: 0
 --- !u!4 &1005023592
 Transform:
