@@ -17,7 +17,7 @@ public class CubeSpawnManager : MonoBehaviour
 
     IEnumerator SpawnCubesRepeatedly()
     {
-        while (true) // Esto hará que se ejecute infinitamente.
+        while (true) 
         {
             createCube();
             yield return new WaitForSeconds(spawnInterval);
@@ -26,7 +26,7 @@ public class CubeSpawnManager : MonoBehaviour
 
     void createCube()
     {
-        int randomCube = Random.Range(0, Cubeprefabs.Length); // Asegúrate de usar Cubeprefabs.Length en lugar de 1.
+        int randomCube = Random.Range(0, Cubeprefabs.Length); 
         int randomSpawn = Random.Range(0, Spawnpoints.Length);
         Instantiate(Cubeprefabs[randomCube], Spawnpoints[randomSpawn].transform.position, Quaternion.identity);
     }
