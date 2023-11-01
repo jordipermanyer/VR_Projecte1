@@ -22,6 +22,13 @@ public class Shooting : MonoBehaviour
         //TODO
         //- Només podem cridar a la funció Shoot si (Input.GetMouseButtonDown(0) i si ha passat fireRate segons
 
+        //afegir el temps i que ho faci amb el VR
+        if (Input.GetMouseButtonDown(0))
+        {
+            print("Polsat");
+            Shoot();
+        }
+
     }
 
     private void Shoot()
@@ -32,11 +39,16 @@ public class Shooting : MonoBehaviour
 
         //TODO
         //-Play animation: activar el trigger anomenat "Fire" del gunAnimator
+        gunAnimator.Play("Fire");
 
 
         //TODO
+
         //-Crear una instància de bulletPrefab a la posició de nozzleTransform i rotació identitat
+        print("creat");
+        GameObject gun = Instantiate(bulletPrefab, nozzleTransform.transform.position, Quaternion.identity);
         //-Posar com a forward de la instància, la forward de la nozzleTransform
+        gun.transform.forward = nozzleTransform.transform.forward;
 
 
     }
