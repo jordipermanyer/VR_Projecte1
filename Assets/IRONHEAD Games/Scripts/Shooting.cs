@@ -14,7 +14,13 @@ public class Shooting : MonoBehaviour
 
  
     public Animator gunAnimator;
-    
+
+    private AudioManager audio;
+
+    private void Start()
+    {
+         //audio = GetComponent<AudioManager>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -35,6 +41,7 @@ public class Shooting : MonoBehaviour
     {
         //TODO
         //-Play audiosource gunSound del AudioManager (és un singleton).
+        //audio.gunSound.Play();
         //-Banas de cridar al Play s'ha de posar com a position la position de nozzleTransform
 
         //TODO

@@ -1357,6 +1357,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &780928544 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8158423210945799095, guid: 99930b2561abfaa4cae77974a386e703, type: 3}
+  m_PrefabInstance: {fileID: 1656790197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &904957375
 GameObject:
   m_ObjectHideFlags: 0
@@ -2304,7 +2309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sliceSound: {fileID: 3819278}
-  gunSound: {fileID: 0}
+  gunSound: {fileID: 780928544}
   musicTheme: {fileID: 1908826275}
   buttonClickSound: {fileID: 0}
 --- !u!4 &1442044316
