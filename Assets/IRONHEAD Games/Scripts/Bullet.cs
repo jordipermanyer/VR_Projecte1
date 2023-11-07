@@ -24,8 +24,12 @@ public class Bullet : MonoBehaviour
 
     }
 
-  
-   
+    private void Update()
+    {
+        Destroy(gameObject, 2.0f);
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);

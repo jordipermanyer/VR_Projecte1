@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
    
-    public float fireRate = 0.1f;
+    public float fireRate = 3.0f;
     public GameObject bulletPrefab;
 
     float elapsedTime;
@@ -15,11 +15,12 @@ public class Shooting : MonoBehaviour
  
     public Animator gunAnimator;
 
-    private AudioManager audio;
+    
+    private AudioSource audioSource;
 
     private void Start()
     {
-         //audio = GetComponent<AudioManager>();
+       
     }
 
     // Update is called once per frame
@@ -28,11 +29,26 @@ public class Shooting : MonoBehaviour
         //TODO
         //- Només podem cridar a la funció Shoot si (Input.GetMouseButtonDown(0) i si ha passat fireRate segons
 
+
+
         //afegir el temps i que ho faci amb el VR
-        if (Input.GetMouseButtonDown(0))
+        elapsedTime += Time.deltaTime;
+        /*
+                if ((Input.GetMouseButtonDown(0) || (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0.8f)) && elapsedTime >= fireRate)
+                {
+                    print("Pulsado");
+                    Shoot();
+                    elapsedTime = 0;  
+                }
+
+
+        */
+
+        if ((Input.GetMouseButtonDown(0) || (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) && elapsedTime >= fireRate))
         {
-            print("Polsat");
+            print("Pulsado");
             Shoot();
+            elapsedTime = 0;
         }
 
     }
@@ -41,7 +57,8 @@ public class Shooting : MonoBehaviour
     {
         //TODO
         //-Play audiosource gunSound del AudioManager (és un singleton).
-        //audio.gunSound.Play();
+        AudioManager.instance.gunSound.Play();     
+
         //-Banas de cridar al Play s'ha de posar com a position la position de nozzleTransform
 
         //TODO
