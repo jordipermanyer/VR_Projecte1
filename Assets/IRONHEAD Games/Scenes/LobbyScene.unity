@@ -2087,7 +2087,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1191496146
 Canvas:
   m_ObjectHideFlags: 0
@@ -2633,6 +2633,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b92da0d6b140f40b5df96f25391cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  overlay_background: {fileID: 344141381}
+  overlay_LoadingText: {fileID: 1395333199}
 --- !u!1 &1580096877
 GameObject:
   m_ObjectHideFlags: 0

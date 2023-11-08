@@ -44,6 +44,7 @@ public class ButtonPushClick : MonoBehaviour
             {
                 isClicked = true;               
                 transform.localPosition = buttonDownPosition;
+                SceneLoader.instance.LoadSecene("GameScene");
                 OnButtonDown();
             }
         }
