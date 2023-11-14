@@ -21,16 +21,23 @@ public class CubeExplode : MonoBehaviour
 
     public void IsShot()
     {
+
+
         //TODO:
         //Si el cub ha sigut impactat per una bala -->
         //-Destruir el mainCube
         Destroy(mainCube);
+
+        Vibration.instance.Vibra();
+
         //-Activar el shatteredObject 
         shatteredObject.SetActive(true);
         //-Fer play en el component Animation del shatteredObject
         shatteredObject.GetComponent<Animation>().Play();
         //-Destruir el shatteredObject després de 1 segon.
         Destroy(shatteredObject, 1.0f);
+
+        ScoreManager.instance.AddScore(1);
 
     }
 

@@ -18,6 +18,8 @@ public class Shooting : MonoBehaviour
     
     private AudioSource audioSource;
 
+    public GameObject slicer;
+
     private void Start()
     {
        
@@ -70,7 +72,13 @@ public class Shooting : MonoBehaviour
 
         //-Crear una instància de bulletPrefab a la posició de nozzleTransform i rotació identitat
         print("creat");
-        GameObject gun = Instantiate(bulletPrefab, nozzleTransform.transform.position, Quaternion.identity);
+        GameObject gun = Instantiate(bulletPrefab, nozzleTransform.transform.position, Quaternion.identity);  
+        
+        //Ignorar les colisions de la bala i el pla de la espasa.
+        CapsuleCollider bulletCollider = gun.GetComponent<CapsuleCollider>();
+        MeshCollider slicerCollider = GameObject.Find("Slicer").GetComponent<MeshCollider>();
+        Physics.IgnoreCollision(bulletCollider, slicerCollider);
+
         //-Posar com a forward de la instància, la forward de la nozzleTransform
         gun.transform.forward = nozzleTransform.transform.forward;
 

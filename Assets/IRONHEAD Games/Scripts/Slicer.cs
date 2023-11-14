@@ -31,7 +31,10 @@ public class Slicer : MonoBehaviour
                 MakeItPhysical(upperHullGameobject, objectToBeSliced.gameObject.GetComponent<Rigidbody>().velocity);
                 MakeItPhysical(lowerHullGameobject, objectToBeSliced.gameObject.GetComponent<Rigidbody>().velocity);
 
+                Vibration.instance.VibraSword();
+                ScoreManager.instance.AddScore(1);
                 Destroy(objectToBeSliced.gameObject);
+                AudioManager.instance.sliceSound.Play();
             }
         }
 

@@ -5,11 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - cube
+  - BackButton
+  - Bullet
+  - Sword
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Sliceable
   - Water
   - UI
   - 

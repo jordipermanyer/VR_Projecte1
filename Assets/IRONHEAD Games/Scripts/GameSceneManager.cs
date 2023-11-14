@@ -20,6 +20,10 @@ public class GameSceneManager : MonoBehaviour
     float audioClipLength;
     private float timeToStartGame = 5.0f;
 
+    //Panells
+    public GameObject littlePanel;
+    public GameObject bigPanel;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +37,9 @@ public class GameSceneManager : MonoBehaviour
 
         //Resetting progress bar
         progressBarImage.fillAmount = Mathf.Clamp(0, 0, 1);
+
+        bigPanel.SetActive(false);
+        littlePanel.SetActive(true);
 
 
     }
@@ -49,6 +56,7 @@ public class GameSceneManager : MonoBehaviour
 
             //TODO:
             //-Actualitzar el progressBarImage a partir del temps actual del musicTheme que té el singleton AudioManager
+            
 
 
         }
@@ -66,6 +74,22 @@ public class GameSceneManager : MonoBehaviour
 
         //Disable timer UI
         timerUI_Gameobject.SetActive(false);
+
+        GameObject OVRCameraRig = GameObject.Find("OVRCameraRig");
+        bigPanel.transform.position = OVRCameraRig.transform.position + new Vector3(0, 2, 4);
+        bigPanel.SetActive(true);
+        
+        littlePanel.SetActive(false);
+
+        //yield return new WaitForSeconds(5f);
+        StartCoroutine(goToLobby());
+        
+    }
+
+    IEnumerator goToLobby()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneLoader.instance.LoadSecene("LobbyScene");
     }
 
 

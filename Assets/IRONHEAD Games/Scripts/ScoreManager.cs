@@ -26,8 +26,10 @@ public class ScoreManager : MonoBehaviour
         }
 
         instance = this;
-        // DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
+
+
 
 
     // Start is called before the first frame update
@@ -35,23 +37,42 @@ public class ScoreManager : MonoBehaviour
     {
         //TODO: agafar del playerprefs un enter per llegir/desar el HighScore.
         //- Per defecte aquest highscore de playerPrefs si no s'ha llegit mai ha de ser 0.
+        if (highScore != 0)
+        {
+            highScore = currentScore;
+        }
+        else
+        {
+            highScore = 0;
+        }
         //- Posar el highScore en el ui text hightScoreText
+        hightScoreText.SetText(highScore.ToString());
         //- Setejar el currentScore com a 0 i també actualitzar el ui currentScoreText
+        currentScore = 0;
+        currentScoreText.SetText("0");
 
- 
+
     }
 
 
     public void AddScore(int scorePoint)
     {
         //TODO:
-        //-Actualitzar el currentScore sumant-li scorePoint.
+        //-Actualitzar el currentScore sumant-li scorePoint
+        currentScore = currentScore + scorePoint;
         //-Actualitzar el currentScoreText
-
+        currentScoreText.SetText(currentScore.ToString());
         //- Actualitzar el finalScoreText (és la UI més gran que es mostra quan la partida finalitza)
+        finalScoreText.SetText(currentScore.ToString());
+
         //- Si el currentScore supera el HighScore-->
+        if (currentScore > highScore)
+        {
+            highScore = currentScore;
+            hightScoreText.SetText(highScore.ToString());
+        }
         //  - Desar en playerprefs el nou record.
         //  - Mostrar aquesta info en el hightScoreText (la ui que es mostra al final)
-        
+
     }
 }

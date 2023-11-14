@@ -43,8 +43,7 @@ public class ButtonPushClick : MonoBehaviour
             if (transform.localPosition.y < MinLocalY)
             {
                 isClicked = true;               
-                transform.localPosition = buttonDownPosition;
-                SceneLoader.instance.LoadSecene("GameScene");
+                transform.localPosition = buttonDownPosition;                
                 OnButtonDown();
             }
         }
@@ -83,8 +82,9 @@ public class ButtonPushClick : MonoBehaviour
 
         }
         //Load Scene
-        
-        
+        print("Dins");
+        SceneLoader.instance.LoadSecene("GameScene");
+
     }
 
     private void OnTriggerEnter(Collider other)

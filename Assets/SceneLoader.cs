@@ -15,11 +15,13 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadSecene(string nameScene)
     {
-        ShowOverlayAndLoad(nameScene);
+        StartCoroutine(ShowOverlayAndLoad(nameScene));
+       
     }
 
     IEnumerator ShowOverlayAndLoad(string sceneName)
     {
+        print("Canvi escena");
         overlay_background.SetActive(true);
         overlay_LoadingText.SetActive(true);
 
@@ -56,6 +58,7 @@ public class SceneLoader : MonoBehaviour
         }
 
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
 }
