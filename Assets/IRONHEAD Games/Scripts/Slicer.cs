@@ -13,7 +13,7 @@ public class Slicer : MonoBehaviour
     {
         if (!AudioManager.instance.musicTheme.isPlaying)
         {
-            Destroy(GameObject.FindGameObjectWithTag("test"));
+            //Destroy(GameObject.FindGameObjectWithTag("test"));
         }
 
         if (isTouched == true)
