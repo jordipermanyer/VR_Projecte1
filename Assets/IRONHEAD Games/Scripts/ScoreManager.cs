@@ -7,6 +7,7 @@ public class ScoreManager : MonoBehaviour
 
     public int currentScore; 
     public int highScore;
+    private string clavePlayerPref = "puntuacion";
 
     [Header("UI Fields")]
     public TextMeshProUGUI hightScoreText;
@@ -37,9 +38,13 @@ public class ScoreManager : MonoBehaviour
     {
         //TODO: agafar del playerprefs un enter per llegir/desar el HighScore.
         //- Per defecte aquest highscore de playerPrefs si no s'ha llegit mai ha de ser 0.
+        highScore= PlayerPrefs.GetInt(clavePlayerPref);
         if (highScore != 0)
         {
-            highScore = currentScore;
+
+            highScore = PlayerPrefs.GetInt(clavePlayerPref);
+
+            // highScore = currentScore;
         }
         else
         {
@@ -69,10 +74,13 @@ public class ScoreManager : MonoBehaviour
         if (currentScore > highScore)
         {
             highScore = currentScore;
+            PlayerPrefs.SetInt(clavePlayerPref, highScore);
+            PlayerPrefs.Save();
             hightScoreText.SetText(highScore.ToString());
         }
         //  - Desar en playerprefs el nou record.
         //  - Mostrar aquesta info en el hightScoreText (la ui que es mostra al final)
 
+        
     }
 }

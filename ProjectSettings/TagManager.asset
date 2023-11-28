@@ -8,6 +8,7 @@ TagManager:
   - BackButton
   - Bullet
   - Sword
+  - test
   layers:
   - Default
   - TransparentFX

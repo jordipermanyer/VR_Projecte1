@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
+    
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -24,5 +26,9 @@ public class AudioManager : MonoBehaviour
         instance = this;
     }
 
-   
+
+    private void Start()
+    {
+        
+    }
 }

@@ -19,6 +19,13 @@ public class CubeExplode : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (!AudioManager.instance.musicTheme.isPlaying)
+        {
+            Destroy(mainCube);
+        }
+    }
     public void IsShot()
     {
 
@@ -37,7 +44,7 @@ public class CubeExplode : MonoBehaviour
         //-Destruir el shatteredObject després de 1 segon.
         Destroy(shatteredObject, 1.0f);
 
-        ScoreManager.instance.AddScore(1);
+        ScoreManager.instance.AddScore(10);
 
     }
 

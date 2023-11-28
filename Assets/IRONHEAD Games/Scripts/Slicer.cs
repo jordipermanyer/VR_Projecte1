@@ -10,7 +10,12 @@ public class Slicer : MonoBehaviour
     public bool isTouched;
 
     private void Update()
-    {     
+    {
+        if (!AudioManager.instance.musicTheme.isPlaying)
+        {
+            Destroy(GameObject.FindGameObjectWithTag("test"));
+        }
+
         if (isTouched == true)
         {
             isTouched = false;
@@ -32,7 +37,7 @@ public class Slicer : MonoBehaviour
                 MakeItPhysical(lowerHullGameobject, objectToBeSliced.gameObject.GetComponent<Rigidbody>().velocity);
 
                 Vibration.instance.VibraSword();
-                ScoreManager.instance.AddScore(1);
+                ScoreManager.instance.AddScore(20);
                 Destroy(objectToBeSliced.gameObject);
                 AudioManager.instance.sliceSound.Play();
             }

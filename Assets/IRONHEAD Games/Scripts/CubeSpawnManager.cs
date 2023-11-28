@@ -14,13 +14,19 @@ public class CubeSpawnManager : MonoBehaviour
     {
         StartCoroutine(SpawnCubesRepeatedly());
     }
+    
 
     IEnumerator SpawnCubesRepeatedly()
     {
         while (true) 
         {
-            createCube();
-            yield return new WaitForSeconds(spawnInterval);
+            if (AudioManager.instance.musicTheme.isPlaying)
+            {
+                createCube();
+                yield return new WaitForSeconds(spawnInterval);
+            }
+            
+           
         }
     }
 
