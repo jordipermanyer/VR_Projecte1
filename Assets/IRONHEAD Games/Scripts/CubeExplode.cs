@@ -23,7 +23,11 @@ public class CubeExplode : MonoBehaviour
     {
         if (!AudioManager.instance.musicTheme.isPlaying)
         {
-            Destroy(mainCube);
+           if (mainCube != null)
+            {
+                Destroy(mainCube);
+
+            }
         }
     }
     public void IsShot()

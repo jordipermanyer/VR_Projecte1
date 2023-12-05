@@ -13,6 +13,13 @@ public class Slicer : MonoBehaviour
     {
         if (!AudioManager.instance.musicTheme.isPlaying)
         {
+            //GameObject [] obje = GameObject.FindGameObjectsWithTag("test");
+
+            //if (obje != null)
+            // {
+            // Destroy(obje);
+
+            //}
             //Destroy(GameObject.FindGameObjectWithTag("test"));
         }
 
